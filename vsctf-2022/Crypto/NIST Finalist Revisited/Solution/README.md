@@ -56,3 +56,5 @@ Nice, collision found again! Here is your flag: vsctf{REDACTED}
 This is not really a challenge to "learn and implement" a paper - afterall this is a 24 hour beginner-friendly CTF. Player is expected to skim through the paper and find the relevant information, which is not too hard.
 
 PS. I did not think of making this challenge until NIST announcement 3 days ago..
+
+PPS. Some teams solved it with brute forcing 2 hashes in time `O(2^32)`. Good job..

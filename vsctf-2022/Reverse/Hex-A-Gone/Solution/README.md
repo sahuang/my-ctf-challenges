@@ -214,3 +214,5 @@ int main(int argc, char *argv[]) {
 ```
 
 Recovering the image we can see the flag.
+
+![Flag](./flag.bmp)
