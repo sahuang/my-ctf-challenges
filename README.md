@@ -4,8 +4,8 @@ Source code and solution of CTF challenges that I created.
 
 ## vsCTF 2022
 
-| Challenge Name                                                        | Category  | Difficulty | Solves |
-| :--------------: | :----------: |  :------:  | :----: |
+| Challenge Name                                                                   | Category  | Difficulty | Solves |
+| :------------------------------------------------------------------------------: | :-------: | :--------: | :----: |
 | [**Baby RSA**](./vsctf-2022/Crypto/Baby%20RSA/)                                  | Crypto    | Easy       | 68     |
 | [**Strongest RSA**](./vsctf-2022/Crypto/Strongest%20RSA/)                        | Crypto    | Easy       | 53     |
 | [**Secure Grading System**](./vsctf-2022/Crypto/Secure%20Grading%20System/)      | Crypto    | Medium     | 21     |
@@ -21,8 +21,8 @@ Source code and solution of CTF challenges that I created.
 
 ## SekaiCTF 2022
 
-| Challenge Name                                                       | Category | Difficulty (out of 5) | Solves |
-| :--------------: | :----------: |  :------:  | :----: |
+| Challenge Name                                                                     | Category | Difficulty (out of 5) | Solves |
+| :--------------------------------------------------------------------------------: | :------: | :-------------------: | :----: |
 | [**Time Capsule**](./sekaictf-2022/Crypto/Time%20Capsule/)                         | Crypto   | 1                     | 178    |
 | [**Secure Image Encryption**](./sekaictf-2022/Crypto/Secure%20Image%20Encryption/) | Crypto   | 2                     | 49     |
 | [**Robust CBC**](./sekaictf-2022/Crypto/SRobust%20CBC/)                            | Crypto   | 4                     | 10     |
@@ -36,7 +36,7 @@ Source code and solution of CTF challenges that I created.
 
 ## Security BSides Ahmedabad CTF 2022
 
-| Challenge Name                                                        | Category  | Difficulty | Solves |
-| :--------------: | :----------: |  :------:  | :----: |
-| [**Password Checker**](./security-bsides-ahmedabad-ctf-2022/Reverse/Password%20Checker/)                 | Reverse   | Easy       |  2     |
-| [**Cyrene**](./security-bsides-ahmedabad-ctf-2022/Reverse/Cyrene/)                                       | Reverse   | Medium     |  1     |
+| Challenge Name                                                                            | Category  | Difficulty | Solves |
+| :---------------------------------------------------------------------------------------: | :-------: | :--------: | :----: |
+| [**Password Checker**](./security-bsides-ahmedabad-ctf-2022/Reverse/Password%20Checker/)  |  Reverse  |   Easy     |   2    |
+| [**Cyrene**](./security-bsides-ahmedabad-ctf-2022/Reverse/Cyrene/)                        |  Reverse  |   Medium   |   1    |
