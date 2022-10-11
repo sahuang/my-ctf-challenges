@@ -9,7 +9,7 @@
 
 ## My challenges
 
-I have authored 12 challenges for `vsCTF`. Most challenges are beginner-friendly and straightforward.
+I have authored 12 challenges. Most challenges are beginner-friendly and straightforward.
 
 | Challenge Name                                                        | Category  | Difficulty | Solves |
 | :--------------: | :----------: |  :------:  | :----: |

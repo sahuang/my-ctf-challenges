@@ -5,11 +5,12 @@
 - Event: https://ctftime.org/event/1619
 - Format: Jeopardy, 48 hours
 - Website: https://ctf.sekai.team/
+- Official writeups: https://github.com/project-sekai-ctf/sekaictf-2022
 - Participated teams: 852 (508 teams have solved a challenge besides sanity check and survey)
 
 ## My challenges
 
-I have authored 10 challenges for `SekaiCTF`. Difficulty of each challenge is listed in the table below.
+I have authored 10 challenges. Difficulty of each challenge is listed in the table below.
 
 | Challenge Name                                                       | Category | Difficulty (out of 5) | Solves |
 | :--------------: | :----------: |  :------:  | :----: |
