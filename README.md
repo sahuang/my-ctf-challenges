@@ -40,3 +40,20 @@ Source code and solution of CTF challenges that I created.
 | :---------------------------------------------------------------------------------------: | :-------: | :--------: | :----: |
 | [**Password Checker**](./security-bsides-ahmedabad-ctf-2022/Reverse/Password%20Checker/)  |  Reverse  |   Easy     |   2    |
 | [**Cyrene**](./security-bsides-ahmedabad-ctf-2022/Reverse/Cyrene/)                        |  Reverse  |   Medium   |   1    |
+
+## CryptoverseCTF 2022
+
+| Challenge Name                                           | Category  | Difficulty | Solves |
+| :--------------: | :----------: |  :------:  | :----: |
+| [**Baby Maths**](./cryptoversectf-2022/Misc/Baby%20Maths/)                   | Misc      | Easy       |  28    |
+| [**Cherry Blossom**](./cryptoversectf-2022/Misc/Cherry%20Blossom/)           | Misc      | Medium     |  17    |
+| [**Not georainbolt**](./cryptoversectf-2022/Misc/Not%20Georainbolt/)         | Misc      | Medium     |  37    |
+| [**RSA 3**](./cryptoversectf-2022/Crypto/RSA%203/)                           | Crypto    | Medium     |  31    |
+| [**Big Rabin**](./cryptoversectf-2022/Crypto/Big%20Rabin/)                   | Crypto    | Medium     |  53    |
+| [**Weird dlog**](./cryptoversectf-2022/Crypto/Weird%20dlog/)                 | Crypto    | Medium     |  14    |
+| [**1337**](./cryptoversectf-2022/Crypto/1337/)                               | Crypto    | Medium     |  18    |
+| [**World Cup Predictions**](./cryptoversectf-2022/Reverse/World%20Cup/)      | Reverse   | Easy       |  66    |
+| [**My Online Voucher**](./cryptoversectf-2022/Reverse/My%20Online%20Voucher/)| Reverse   | Medium     |  4     |
+| [**Boost Game**](./cryptoversectf-2022/Reverse/Boost%20Game/)                | Reverse   | Hard       |  11    |
+| [**Baby CUDA**](./cryptoversectf-2022/Reverse/Baby%20CUDA/)                  | Reverse   | Hard       |  4     |
+| [**Cheney-on-the-MTA**](./cryptoversectf-2022/Reverse/Cheney-on-the-MTA/)    | Reverse   | Hard       |  2     |
