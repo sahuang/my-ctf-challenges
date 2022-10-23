@@ -1,0 +1,8 @@
+version: "3"
+services:
+  worldcup:
+    build: .
+    ports:
+      - "22611:22611"
+    expose:
+      - "22611"

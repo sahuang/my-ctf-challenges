@@ -1,0 +1,30 @@
+(import (chicken io))
+(import (chicken string))
+(import string-utils)
+
+(print "Enter the flag: ")
+
+(define input (read-line))
+(define input (string->list input))
+(define arr '(96 115 96 113 99 120 50 96 101 48 106 48 92 95 49 95 118 91 91 122))
+(define good 1)
+
+(define (nth n l)
+  (if (or (> n (length l)) (< n 0))
+    (error "Wrong.")
+    (if (eq? n 0)
+      (car l)
+      (nth (- n 1) (cdr l)))))
+
+(if (or (> (length input) 20) (< (length input) 20))
+	(set! good 0)
+	(do ((i 0 (+ i 1))) ((> i 19))
+  	    (if (not (= (nth i arr) (- (char->integer (nth i input)) 3)))
+		    (set! good 0)
+		)
+	)
+)
+
+(if (= good 1)
+	(print "Flag is correct!")
+	(print "Flag is wrong..."))
