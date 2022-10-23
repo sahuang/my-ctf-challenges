@@ -8,6 +8,8 @@ Rabin cryptosystem, but big.
 
 Brute-force the possible plaintexts.
 
+Note: Because `e` is small and `n` is too large, it turns out you can just sqrt `c` and get the plaintext. My bad on getting the unintended :(
+
 ```py
 from Crypto.Util.number import *
 from gmpy2 import *

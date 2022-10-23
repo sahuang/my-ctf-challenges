@@ -4,7 +4,7 @@
 
 - Format: Jeopardy, 30 hours
 - Website: https://cryptoversectf.tk
-- Participated teams: 337 teams have scored
+- Participated teams: 349 teams have scored
 
 ## My challenges
 
