@@ -1,0 +1,1 @@
+flag = b"cvctf{jU57_4_s1MpL3_s1d3_ch4nn3L_ch1p@_@}"

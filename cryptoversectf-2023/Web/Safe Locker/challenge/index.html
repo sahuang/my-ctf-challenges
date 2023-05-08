@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Safe Locker</title>
+  <link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'><link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div style="text-align: center; font-weight: bold; margin-top: 50px; font-size: 70px;">
+    Unlock Me!
+  </div>
+
+  <div id="lock-plate">
+    <span></span><span></span>
+    <div id="lock-wrapper">
+      <div class="is-solved">FLAGGED!</div>
+      <div class="lock-dial"><ul data-combo-num="0"><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>0</li><li>1</li><li>2</li><li>3</li><li>4</li></ul></div>
+      <div class="lock-dial"><ul data-combo-num="0"><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>0</li><li>1</li><li>2</li><li>3</li><li>4</li></ul></div>
+      <div class="lock-dial"><ul data-combo-num="0"><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>0</li><li>1</li><li>2</li><li>3</li><li>4</li></ul></div>
+      <div class="lock-dial"><ul data-combo-num="0"><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>0</li><li>1</li><li>2</li><li>3</li><li>4</li></ul></div>
+      <div class="lock-dial"><ul data-combo-num="0"><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>0</li><li>1</li><li>2</li><li>3</li><li>4</li></ul></div>
+      <div class="lock-dial"><ul data-combo-num="0"><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>0</li><li>1</li><li>2</li><li>3</li><li>4</li></ul></div>
+      <div class="lock-dial"><ul data-combo-num="0"><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>0</li><li>1</li><li>2</li><li>3</li><li>4</li></ul></div>
+      <div class="lock-dial"><ul data-combo-num="0"><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>0</li><li>1</li><li>2</li><li>3</li><li>4</li></ul></div>
+    </div>
+  </div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+  <script type="module">
+    import Module from './passCheck.js';
+
+    var comboArray = [0, 0, 0, 0, 0, 0, 0, 0];
+    var gridIncrement = $( ".lock-dial ul" ).css('line-height').replace('px', '')/2;
+    var numNums = $( ".lock-dial:eq(0) ul li" ).length;
+    var halfHeight = gridIncrement*numNums;
+    var initTop = -(halfHeight-gridIncrement);
+    
+    $( ".lock-dial ul" ).css('top', initTop);
+    
+    $( ".lock-dial ul" ).draggable({
+      grid: [ 0, gridIncrement ],
+      axis: 'y',
+      drag: function() {
+        var dragDir = $(this).css('top').replace('px', '') < initTop ? "up" : "down";
+        
+        if (dragDir == "up"){
+          var curNum = parseInt($(this).find('li:last-child').text()) + 1;
+          if (curNum < 10) {
+            $(this).append('<li>'+curNum+'</li>');
+          } else {
+            $(this).append('<li>0</li>');
+          };
+        } else {
+          var curNum = parseInt($(this).find('li:first-child').text()) - 1;
+          var thisTop = parseInt($(this).css('margin-top').replace('px', ''));
+          
+          $(this).css({
+            marginTop: thisTop-(gridIncrement*2)
+          });
+          
+          if (curNum > -1) {
+            $(this).prepend('<li>'+curNum+'</li>');
+          } else {
+            $(this).prepend('<li>9</li>');
+          };
+        };
+      },
+      stop: function(){
+        var negOrPos = $(this).css('margin-top').replace('px', '') > 0 ? 1 : -1;
+        var thisTopTotal = parseInt($(this).css('top').replace('px', '')) + Math.abs(initTop);
+        var marginMinified = parseInt(Math.abs($(this).css('margin-top').replace('px', ''))) - thisTopTotal;
+        var numIncs = Math.floor(marginMinified/(halfHeight*2));
+        var totalDif = numIncs*(halfHeight*2);
+        var topTen = (marginMinified - totalDif)*negOrPos;
+        var activeIndex = Math.abs(topTen/(gridIncrement*2)) + (halfHeight/(gridIncrement*2));
+        
+        $(this).attr("data-combo-num", $(this).find('li').eq(activeIndex).text()).css({
+          top: -315,
+          marginTop: topTen
+        }).find('li').slice(20).remove();
+        
+        for(var i=0; i<$( ".lock-dial ul" ).length; i++){
+          comboArray[i] = $( ".lock-dial ul:eq("+i+")" ).attr("data-combo-num");
+        }
+
+        Module().then(function(mod) {
+          const password_checker = mod.cwrap('checker', 'boolean', ['string']);
+          
+          if (password_checker(comboArray.join(""), comboArray.length)) {
+            $('.lock-dial ul').draggable('disable');
+            $('#lock-wrapper').addClass("unlocked");
+            $('.lock-dial').each(function(){
+              var $this = $(this);
+              $this.find('ul').delay(400).css('color', '#0f0').fadeOut(function(){
+                $this.animate({
+                  marginTop: 150
+                }, function(){
+                  $this.fadeOut(function() {
+                    $('.is-solved').fadeIn();
+                  });
+                });
+              });
+            });
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+flag = b"cvctf{th15_fam1Ly_0f_RSA-like_crypt0syst3m_c4n_b3_4tt4ck3d_wh3n_E_15_cL053_t0_N^(n-1)_4nd_d<N^0.25}"

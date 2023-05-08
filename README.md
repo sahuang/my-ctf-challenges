@@ -57,3 +57,19 @@ Source code and solution of CTF challenges that I created.
 | [**Boost Game**](./cryptoversectf-2022/Reverse/Boost%20Game/)                | Reverse   | Hard       |  11    |
 | [**Baby CUDA**](./cryptoversectf-2022/Reverse/Baby%20CUDA/)                  | Reverse   | Hard       |  4     |
 | [**Cheney-on-the-MTA**](./cryptoversectf-2022/Reverse/Cheney-on-the-MTA/)    | Reverse   | Hard       |  2     |
+
+## CryptoverseCTF 2023
+
+| Challenge Name                                                   | Category  | Difficulty | Solves |
+| :--------------: | :----------: |  :------:  | :----: |
+| [**Knapsack vs. Backpack**](./cryptoversectf-2023/Crypto/Knapsack%20vs.%20Backpack/) | Crypto    | Medium     |  31    |
+| [**PicoChip 1**](./cryptoversectf-2023/Crypto/PicoChip%201/)                         | Crypto    | Medium     |  18    |
+| [**PicoChip 2**](./cryptoversectf-2023/Crypto/PicoChip%202/)                         | Crypto    | Hard       |  7     |
+| [**Fractional Flag**](./cryptoversectf-2023/Crypto/Fractional%20Flag/)               | Crypto    | Hard       |  17    |
+| [**OJail**](./cryptoversectf-2023/Misc/OJail/)                                       | Misc      | Easy       |  74    |
+| [**Two and a half years**](./cryptoversectf-2023/Misc/Two%20and%20a%20half%20years/) | Misc      | Hard       |  16    |
+| [**Solid Reverse**](./cryptoversectf-2023/Reverse/Solid%20Reverse/)                  | Reverse   | Medium     |  49    |
+| [**Java Not Interesting**](./cryptoversectf-2023/Reverse/Java%20Not%20Interesting/)  | Reverse   | Medium     |  22    |
+| [**東方ダンマクカグラ**](./cryptoversectf-2023/Reverse/Touhou%20Danmaku%20Kagura/)     | Reverse   | Medium     |  19    |
+| [**Safe Locker**](./cryptoversectf-2023/Web/Safe%20Locker/)                          | Web       | Easy       |  36    |
+| [**Safe Locker++**](./cryptoversectf-2023/Web/Safe%20Locker%20Plus%20Plus/)          | Web       | Hard       |  5     |

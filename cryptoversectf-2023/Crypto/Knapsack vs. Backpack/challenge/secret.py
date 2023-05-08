@@ -1,0 +1,1 @@
+flag = "cvctf{knap5ack_0/1_15_for_the_noob5_BUT_backp@ck_M3rkl3_h3llm4n_15_for_the_pro5}"
