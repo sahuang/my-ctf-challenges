@@ -1,0 +1,8 @@
+version: "3.8"
+
+services:
+  ecc-fantasy:
+    build: .
+    ports:
+      - 4300:9999
+    restart: always

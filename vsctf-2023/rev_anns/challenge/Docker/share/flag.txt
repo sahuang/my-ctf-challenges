@@ -1,0 +1,1 @@
+vsctf{m0r3_1nd3x_c4n_b3_f0und_github.com/facebookresearch/faiss/wiki/The-index-factory}

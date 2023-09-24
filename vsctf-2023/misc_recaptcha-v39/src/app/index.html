@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reCAPTCHA v39</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="text-white bg-zinc-800">
+    <div class="container px-4 mx-auto text-center">
+        <h1 class="my-16 text-6xl font-bold text-center">CAPTCHA Challenge</h1>
+        <p class="my-8 text-xl">Find the area of shaded region of the square whose side length is <output class="font-mono">10</output>.<br>The absolute error of your calculation needs to be smaller than <output class="font-mono">1</output>.</p>
+        <mark class="px-4 py-2 mx-auto my-2 rounded w-fit" id="conn_close" style="display: none;">Connection closed.</mark>
+        <p class="my-2">You have 5 seconds to answer each question once it is loaded.</p>
+        <p class="my-2">You have got <span id="counter">0</span> answer(s).</p>
+        <button id="start" disabled class="px-4 py-2 rounded bg-cyan-700 hover:bg-cyan-600 disabled:bg-zinc-700 disabled:hover:bg-zinc-700">Start</button>
+        <fieldset id="fieldset" style="display: none;">
+            <div>
+                <p id="loading" class="my-2">Loading...</p>
+                <div id="display_wrap" class="my-8 relative w-fit mx-auto" style="display: none;">
+                    <div class="absolute left-0 right-0 top-[-1.75rem] border-x" style="background-image: linear-gradient(0deg, transparent 45%, white 45%, transparent 55%);"><span class="bg-zinc-800 px-1">10</span></div>
+                    <div class="absolute top-0 bottom-0 left-[-1.5rem] border-y flex items-center"  style="background-image: linear-gradient(90deg, transparent 45%, white 45%, transparent 55%);"><span class="bg-zinc-800 py-1">10</span></div>
+                    <img id="display" class="mx-auto my-2" src="" />
+                </div>
+            </div>
+            <input type="text" pattern="-?\d+" id="answer" placeholder="Answer" class="px-2 py-2 text-black rounded" />
+            <button id="submit" class="px-4 py-2 rounded bg-cyan-700 hover:bg-cyan-600 disabled:bg-zinc-700 disabled:hover:bg-zinc-700">Submit</button>
+        </fieldset>
+    </div>
+    <script>
+        const start = document.getElementById('start');
+        const fieldset = document.getElementById('fieldset');
+        const display = document.getElementById('display');
+        const displayWrap = document.getElementById('display_wrap');
+        const loading = document.getElementById('loading');
+        const counter = document.getElementById('counter');
+        const answerField = document.getElementById('answer');
+        const submit = document.getElementById('submit');
+        const connClose = document.getElementById('conn_close');
+        const socket = new WebSocket((window.location.protocol === "https:" ? "wss://" : "ws://") + location.host + '/echo');
+        socket.addEventListener("open", () => {
+            start.disabled = false;
+        });
+        socket.addEventListener("close", () => {
+            start.disabled = true;
+            submit.disabled = true;
+            answerField.disabled = true;
+            submit.disabled = true;
+            submit.innerText = "Refresh to retry";
+            connClose.style.display = "block";
+        });
+        start.addEventListener('click', () => {
+            start.disabled = true;
+            start.style.display = 'none';
+            fieldset.style.display = 'block';
+            socket.send('0');
+        });
+        answerField.addEventListener("keydown", (event) => {
+            let keyPressed = event.keyCode || event.which;
+            if (keyPressed === 13) {
+                submit.click();
+            }
+        });
+        submit.addEventListener('click', function () {
+            displayWrap.style.display = 'none';
+            loading.style.display = 'block';
+            submit.disabled = true;
+            socket.send(answerField.value);
+        });
+
+        socket.addEventListener('message', async (ev) => {
+            if (typeof ev.data === 'string') {
+                counter.innerText = ev.data;
+                if (ev.data === "WRONG") {
+                    answerField.disabled = true;
+                    submit.disabled = true;
+                    answerField.value = "Refresh to retry";
+                }
+            } else {
+                if (ev.data.size !== 0) {
+                    const img = new Blob([ev.data], {type: "image/png"});
+                    const url = URL.createObjectURL(img);
+                    displayWrap.style.display = 'block';
+                    loading.style.display = 'none';
+                    answerField.value = "";
+                    submit.disabled = false;
+                    display.src = url;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

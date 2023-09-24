@@ -2,6 +2,18 @@
 
 Source code and solution of CTF challenges that I created.
 
+## vsCTF 2023
+
+| Challenge Name                                                                   | Category  | Difficulty | Solves |
+| :--------------: | :----------: |  :------:  | :----: |
+| [**ECC Fantasy**](./vsctf-2023/crypto_ecc-fantasy/)                              | Crypto    | Easy       | 21     |
+| [**reCAPTCHA v39**](./vsctf-2023/misc_recaptcha-v39/)                            | Misc      | Easy       | 57     |
+| [**OtterSec Is Cat**](./vsctf-2023/misc_ottersec-is-cat/)                        | Misc      | Easy       | 26     |
+| [**Sheep Loves Maths**](./vsctf-2023/misc_sheep-loves-maths/)                    | Misc      | Medium     | 16     |
+| [**ZKPLite**](./vsctf-2023/misc_zkplite/)                                        | Misc      | Hard       | 3      |
+| [**Functional CPP II**](./vsctf-2023/rev_functional-cpp-II/)                     | Reverse   | Easy       | 59     |
+| [**ANNS**](./vsctf-2023/rev_anns/)                                               | Reverse   | Hard       | 3      |
+
 ## SekaiCTF 2023
 
 | Challenge Name                                                          | Category  | Difficulty (out of 5) | Solves |
