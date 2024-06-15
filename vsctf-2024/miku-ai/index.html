@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vsCTF 2024</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="text-white bg-zinc-800">
+    <div class="container px-4 mx-auto text-center">
+        <h1 class="my-16 text-6xl font-bold text-center">Hatsune Miku AI</h1>
+        <p class="my-8 text-xl">The best Miku AI with high-quality audio and stunning visualizations.</p>
+        <mark class="px-4 py-2 mx-auto my-2 rounded w-fit" id="conn_close" style="display: none;">Connection closed.</mark>
+        <p class="my-2">Upload an MP3 file once challenge is loaded.</p>
+        <button id="start" disabled class="px-4 py-2 rounded bg-cyan-700 hover:bg-cyan-600 disabled:bg-zinc-700 disabled:hover:bg-zinc-700">Start</button>
+        <fieldset id="fieldset" style="display: none;">
+            <div>
+                <p id="loading" class="my-2">Loading...</p>
+                <img id="textImage" style="display: none;" class="mx-auto my-2" />
+                <input type="file" id="file-input" accept="audio/mp3" class="px-2 py-2 text-white rounded" />
+                <button id="submit" class="px-4 py-2 rounded bg-cyan-700 hover:bg-cyan-600 disabled:bg-zinc-700 disabled:hover:bg-zinc-700">Submit</button>
+            </div>
+        </fieldset>
+    </div>
+    <script>
+        const start = document.getElementById('start');
+        const fieldset = document.getElementById('fieldset');
+        const imageElement = document.getElementById('textImage');
+        const loading = document.getElementById('loading');
+        const fileInput = document.getElementById('file-input');
+        const submit = document.getElementById('submit');
+        const connClose = document.getElementById('conn_close');
+        const socket = new WebSocket((window.location.protocol === "https:" ? "wss://" : "ws://") + location.host + '/echo');
+        
+        socket.addEventListener("open", () => {
+            start.disabled = false;
+        });
+        
+        socket.addEventListener("close", () => {
+            start.disabled = true;
+            submit.disabled = true;
+            fileInput.disabled = true;
+            submit.disabled = true;
+            submit.innerText = "Refresh to retry";
+            connClose.style.display = "block";
+        });
+
+        start.addEventListener('click', () => {
+            start.disabled = true;
+            start.style.display = 'none';
+            fieldset.style.display = 'block';
+            socket.send('start');
+        });
+
+        submit.addEventListener('click', () => {
+            const file = fileInput.files[0];
+            if (file && file.size <= 1 * 1024 * 1024) { // Check file size (<= 1MB)
+                const reader = new FileReader();
+                reader.onload = () => {
+                    socket.send(reader.result);
+                };
+                reader.readAsArrayBuffer(file);
+                loading.style.display = 'block';
+                submit.disabled = true;
+            } else {
+                alert("I don't think you need a larger MP3...");
+            }
+        });
+
+        socket.addEventListener('message', (ev) => {
+            if (typeof ev.data === 'string') {
+                if (ev.data === "WRONG") {
+                    fileInput.disabled = true;
+                    submit.disabled = true;
+                    fileInput.value = "";
+                    loading.style.display = 'none';
+                } else if (ev.data.includes("vsctf{")) {
+                    fileInput.disabled = true;
+                    submit.disabled = true;
+                    fileInput.value = "";
+                    loading.style.display = 'none';
+                    imageElement.src = "https://i.pinimg.com/originals/e7/37/04/e7370483c8991773b3c9c8e5cb658479.jpg";
+                }
+            } else {
+                const blob = new Blob([ev.data], { type: "image/png" });
+                const url = URL.createObjectURL(blob);
+                imageElement.src = url;
+                imageElement.style.display = 'block';
+                loading.style.display = 'none';
+                submit.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
