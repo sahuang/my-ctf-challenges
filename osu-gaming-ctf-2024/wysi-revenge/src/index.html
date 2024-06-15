@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Web Osu Revenge!</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+
+<body id="body">
+  <div id="music"><audio src="./wysi.mp3" controls></audio></div>
+  <div id="frame">
+
+    <div id="masterButton">
+      <div id="osuButton"><button type="button" id="osuButton1" data-value="a"><div id="buttonText">a</div></button></div>
+      <div id="osuButton"><button type="button" id="osuButton2" data-value="b"><div id="buttonText">b</div></button></div>
+      <div id="osuButton"><button type="button" id="osuButton3" data-value="c"><div id="buttonText">c</div></button></div>
+      <div id="osuButton"><button type="button" id="osuButton4" data-value="d"><div id="buttonText">d</div></button></div>
+    </div>
+    
+    <div id="masterButton2">
+      <div id="osuButton"><button type="button" id="osuButton1" data-value="e"><div id="buttonText">e</div></button></div>
+      <div id="osuButton"><button type="button" id="osuButton2" data-value="f"><div id="buttonText">f</div></button></div>
+      <div id="osuButton"><button type="button" id="osuButton3" data-value="g"><div id="buttonText">g</div></button></div>
+      <div id="osuButton"><button type="button" id="osuButton4" data-value="h"><div id="buttonText">h</div></button></div>
+      <div id="osuButton"><button type="button" id="osuButton5" data-value="i"><div id="buttonText">i</div></button></div>
+    </div>
+
+    <div id="masterButton3">
+      <div id="osuButton"><button type="button" id="osuButton1" data-value="j"><div id="buttonText">j</div></button></div>
+      <div id="osuButton"><button type="button" id="osuButton2" data-value="k"><div id="buttonText">k</div></button></div>
+      <div id="osuButton"><button type="button" id="osuButton3" data-value="l"><div id="buttonText">l</div></button></div>
+      <div id="osuButton"><button type="button" id="osuButton4" data-value="m"><div id="buttonText">m</div></button></div>
+      <div id="osuButton"><button type="button" id="osuButton5" data-value="n"><div id="buttonText">n</div></button></div>
+    </div>
+
+    <div id="masterButton4">
+      <div id="osuButton"><button type="button" id="osuButton1" data-value="o"><div id="buttonText">o</div></button></div>
+      <div id="osuButton"><button type="button" id="osuButton2" data-value="p"><div id="buttonText">p</div></button></div>
+      <div id="osuButton"><button type="button" id="osuButton3" data-value="q"><div id="buttonText">q</div></button></div>
+      <div id="osuButton"><button type="button" id="osuButton4" data-value="r"><div id="buttonText">r</div></button></div>
+      <div id="osuButton"><button type="button" id="osuButton5" data-value="s"><div id="buttonText">s</div></button></div>
+    </div>
+
+    <div id="osuSlider">
+      <div id="sliderConnecter">
+        <button type="button" id="sliderConnecter1" data-value="u" disabled></button>
+      </div>
+      <button type="button" id="osuSliderPart1" data-value="u" disabled></button>
+      <div id="osuSliderPart2"></div>
+      <div id="sliderBeat1"></div>
+      <button type="button" id="osuSliderPart3" data-value="u">
+        <div id="buttonText">
+          u
+        </div>
+      </button>
+    </div>
+
+    <div id="osuSlider2">
+      <div id="sliderConnecter">
+        <button type="button" id="sliderConnecter1" data-value="v" disabled></button>
+      </div>
+      <button type="button" id="osuSliderPart1" data-value="v" disabled></button>
+      <button type="button" id="osuSliderPart2" data-value="v">
+        <div id="buttonText">
+          v
+        </div>
+      </button>
+      <div id="sliderBeat1"></div>
+      <button type="button" id="osuSliderPart3" data-value="v" disabled></button>
+    </div>
+
+    <div id="osuSlider3">
+      <div id="sliderConnecter">
+        <button type="button" id="sliderConnecter1" data-value="w" disabled></button>
+      </div>
+      <button type="button" id="osuSliderPart1" data-value="w" disabled></button>
+      <div id="osuSliderPart2"></div>
+      <div id="sliderBeat1"></div>
+      <button type="button" id="osuSliderPart3" data-value="w">
+        <div id="buttonText">
+          w
+        </div>
+      </button>
+    </div>
+
+    <div id="masterButton5">
+      <div id="osuButton"><button type="button" id="osuButton1" data-value="t"><div id="buttonText">t</div></button></div>
+      <div id="osuButton"><button type="button" id="osuButton2" data-value="x"><div id="buttonText">x</div></button></div>
+      <div id="osuButton"><button type="button" id="osuButton3" data-value="y"><div id="buttonText">y</div></button></div>
+      <div id="osuButton"><button type="button" id="osuButton4" data-value="z"><div id="buttonText">z</div></button></div>
+    </div>
+  
+  <div class="light">
+    <div class="lightbox">
+    </div>
+  </div>
+  
+</body>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+  <script type="module">
+    import Module from './checker.js';
+    var combos = [];
+
+    function wysi() {
+      if (combos.length === 12) {
+        var cs = combos.join("");
+        Module().then(function(mod) {
+          const ck = mod.cwrap('checker', 'boolean', ['string', 'number']);
+          if (ck(cs,  cs.length)) {
+            document.getElementById("music").innerHTML = '<audio src="./wysi.mp3" autoplay></audio>';
+            console.log("osu{" + cs + "}");
+            } else {
+            console.log("nope.");
+            combos = [];
+            }
+        });
+      }
+    }
+
+    $(document).ready(function() {
+      $("#frame").on("click", "button", function() {
+        var buttonValue = $(this).data("value");
+        combos.push(buttonValue);
+        wysi();
+      });
+    });
+  </script>
+</body>
+</html>

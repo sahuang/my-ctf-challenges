@@ -2,6 +2,20 @@
 
 Source code and solution of CTF challenges that I created.
 
+## osu!gaming CTF 2024
+
+| Challenge Name                                                                            | Category  | Difficulty | Solves |
+| :--------------: | :----------: |  :------:  | :----: |
+| [**beginners**](./osu-gaming-ctf-2024/beginners/)                                         | N/A       | Baby       | N/A    |
+| [**osu!crossword**](./osu-gaming-ctf-2024/osu-crossword/)                                 | osu       | Easy       | 189    |
+| [**wysi-baby**](./osu-gaming-ctf-2024/wysi-baby/)                                         | rev       | Easy       | 170    |
+| [**abnormal-life**](./osu-gaming-ctf-2024/abnormal-life/)                                 | forensics | Easy       | 84     |
+| [**tillerino**](./osu-gaming-ctf-2024/tillerino/)                                         | misc      | Easy       | 53     |
+| [**osu!coin**](./osu-gaming-ctf-2024/osu-coin/)                                           | web3      | Medium     | 39     |
+| [**when-you-see-it**](./osu-gaming-ctf-2024/when-you-see-it/)                             | osint     | Medium     | 35     |
+| [**scorev3**](./osu-gaming-ctf-2024/scorev3/)                                             | rev       | Medium     | 21     |
+| [**wysi-revenge**](./osu-gaming-ctf-2024/wysi-revenge/)                                   | rev       | Hard       | 45     |
+
 ## vsCTF 2023
 
 | Challenge Name                                                                   | Category  | Difficulty | Solves |

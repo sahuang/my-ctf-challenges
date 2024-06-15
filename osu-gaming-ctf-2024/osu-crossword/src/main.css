@@ -1,0 +1,218 @@
+html {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: AvenirNext,Avenir,-apple-system,BlinkMacSystemFont,PingFang SC,Helvetica Neue,STHeiti,Microsoft Yahei,Tahoma,Simsun,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+    vertical-align: baseline;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 0
+}
+
+textarea {
+    line-height: 1.7
+}
+
+input {
+    display: block;
+    position: absolute;
+    font-size: 16px;
+    line-height: 16px;
+    height: 34px;
+    width: 34px;
+    text-align: center;
+    /* text-transform: uppercase; */
+    font-weight: 900;
+    border: 4px solid #000;
+    background: #f8f6e9;
+    box-shadow: inset 4px 4px 0 rgba(0,0,0,.1),inset -4px -4px 0 hsla(0,0%,100%,.9),4px 4px 0 #225cbd;
+    z-index: 1;
+}
+
+input:focus {
+    z-index: 2;
+    outline: 0 0 4px #fff;
+    border-color: #91b9ff
+}
+
+#ctnr {
+    position: relative;
+    box-sizing: content-box;
+    padding: 10px;
+    background: #2f77e2;
+    border: 20px solid #2f77e2
+}
+
+.number1 {
+    position: absolute;
+    top: 6px;
+    left: 187px;
+    font-weight: bold;
+    font-size: 8px;
+    z-index: 2;
+}
+
+.number2 {
+    position: absolute;
+    top: 96px;
+    left: 127px;
+    font-weight: bold;
+    font-size: 8px;
+    z-index: 2;
+}
+
+.number3 {
+    position: absolute;
+    top: 66px;
+    left: 277px;
+    font-weight: bold;
+    font-size: 8px;
+    z-index: 2;
+}
+
+.number4 {
+    position: absolute;
+    top: 66px;
+    left: 427px;
+    font-weight: bold;
+    font-size: 8px;
+    z-index: 2;
+}
+
+.number5 {
+    position: absolute;
+    top: 96px;
+    left: 547px;
+    font-weight: bold;
+    font-size: 8px;
+    z-index: 2;
+}
+
+.number6 {
+    position: absolute;
+    top: 156px;
+    left: 247px;
+    font-weight: bold;
+    font-size: 8px;
+    z-index: 2;
+}
+
+.number7 {
+    position: absolute;
+    top: 156px;
+    left: 487px;
+    font-weight: bold;
+    font-size: 8px;
+    z-index: 2;
+}
+
+.number8 {
+    position: absolute;
+    top: 216px;
+    left: 397px;
+    font-weight: bold;
+    font-size: 8px;
+    z-index: 2;
+}
+
+.number9 {
+    position: absolute;
+    top: 246px;
+    left: 367px;
+    font-weight: bold;
+    font-size: 8px;
+    z-index: 2;
+}
+
+.number10 {
+    position: absolute;
+    top: 216px;
+    left: 127px;
+    font-weight: bold;
+    font-size: 8px;
+    z-index: 2;
+}
+
+.number11 {
+    position: absolute;
+    top: 246px;
+    left: 7px;
+    font-weight: bold;
+    font-size: 8px;
+    z-index: 2;
+}
+
+.number12 {
+    position: absolute;
+    top: 336px;
+    left: 97px;
+    font-weight: bold;
+    font-size: 8px;
+    z-index: 2;
+}
+
+.number13 {
+    position: absolute;
+    top: 306px;
+    left: 247px;
+    font-weight: bold;
+    font-size: 8px;
+    z-index: 2;
+}
+
+.number14 {
+    position: absolute;
+    top: 516px;
+    left: 247px;
+    font-weight: bold;
+    font-size: 8px;
+    z-index: 2;
+}
+
+.number15 {
+    position: absolute;
+    top: 456px;
+    left: 427px;
+    font-weight: bold;
+    font-size: 8px;
+    z-index: 2;
+}
+
+.number16 {
+    position: absolute;
+    top: 366px;
+    left: 427px;
+    font-weight: bold;
+    font-size: 8px;
+    z-index: 2;
+}
+
+.button {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 10px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
