@@ -2,6 +2,19 @@
 
 Source code and solution of CTF challenges that I created.
 
+## vsCTF 2024
+
+| Challenge Name                                                                   | Category  | Difficulty | Solves |
+| :--------------: | :----------: |  :------:  | :----: |
+| [**intro-reversing**](./vsctf-2024/intro-reversing/)                             | rev       | Easy       | 387   |
+| [**baby-game**](./vsctf-2024/algo/)                                              | algo      | Easy       | 345   |
+| [**fall-guys**](./vsctf-2024/fall-guys/)                                         | misc      | Easy       | 174   |
+| [**awa-jelly**](./vsctf-2024/awa-jelly/)                                         | rev       | Easy       | 184   |
+| [**quickmaffs-permutation-puzzle**](./vsctf-2024/algo/)                          | algo      | Medium     | 74    |
+| [**baby-game-revisited**](./vsctf-2024/algo/)                                    | algo      | Hard       | 13    |
+| [**miku-ai**](./vsctf-2024/miku-ai/)                                             | misc      | Hard       | 1     |
+| [**unfinished-homework**](./vsctf-2024/unfinished-homework/)                     | rev       | Hard       | 2     |
+
 ## osu!gaming CTF 2024
 
 | Challenge Name                                                                            | Category  | Difficulty | Solves |
