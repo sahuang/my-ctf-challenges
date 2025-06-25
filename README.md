@@ -2,6 +2,19 @@
 
 Source code and solution of CTF challenges that I created.
 
+## SmileyCTF 2025
+
+| Challenge Name                                                             | Category  | Difficulty | Solves |
+| :--------------: | :----------: |  :------:  | :----: |
+| [**liqUID glASS**](./smileyctf-2025/liquid-glass/)                         | rev       | Medium     | 33     |
+| [**Project Holoswap**](./smileyctf-2025/project-holoswap/)                 | misc      | Easy       | 28     |
+
+## SekaiCTF 2024
+
+| Challenge Name                                                        | Category  | Difficulty (out of 5) | Solves |
+| :--------------: | :----------: |  :------:  | :----: |
+| [**Crack Me**](./sekaictf-2024/crack-me/)                             | rev       | 2                     | 187    |
+
 ## vsCTF 2024
 
 | Challenge Name                                                                   | Category  | Difficulty | Solves |
